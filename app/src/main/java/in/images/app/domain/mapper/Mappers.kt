@@ -1,4 +1,4 @@
-package `in`.images.app.data
+package `in`.images.app.domain.mapper
 
 import `in`.images.app.data.model.HitDTO
 import `in`.images.app.domain.model.ImageModel
