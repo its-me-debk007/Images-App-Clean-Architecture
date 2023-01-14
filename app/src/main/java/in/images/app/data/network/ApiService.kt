@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET
+    @GET(".")
     suspend fun getImages(
         @Query("key") key : String = BuildConfig.API_KEY,
         @Query("q") query: String

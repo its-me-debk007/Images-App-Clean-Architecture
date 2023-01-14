@@ -7,6 +7,7 @@ import dagger.hilt.components.SingletonComponent
 import `in`.images.app.BuildConfig
 import `in`.images.app.data.network.ApiService
 import `in`.images.app.data.repository.ImageRepositoryImpl
+import `in`.images.app.domain.repository.ImageRepository
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
@@ -22,5 +23,5 @@ object DataModule {
         .create(ApiService::class.java)
 
     @Provides
-    fun providesImageRepositoryImpl(apiService: ApiService) = ImageRepositoryImpl(apiService)
+    fun providesImageRepository(apiService: ApiService) : ImageRepository = ImageRepositoryImpl(apiService)
 }

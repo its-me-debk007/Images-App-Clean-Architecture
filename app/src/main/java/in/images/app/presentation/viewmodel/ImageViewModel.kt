@@ -19,6 +19,10 @@ class ImageViewModel @Inject constructor(private val getImagesUseCase: GetImages
     private val _imageList = mutableStateOf<ApiState<List<ImageModel>>>(ApiState.Loading())
     val imageList: State<ApiState<List<ImageModel>>> get() = _imageList
 
+    init {
+        getImages("dragon")
+    }
+
     fun getImages(query: String) {
         getImagesUseCase(query).onEach {
             when (it) {
